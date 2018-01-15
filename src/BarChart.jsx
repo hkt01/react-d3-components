@@ -113,7 +113,8 @@ const BarChart = createReactClass({
         const html = this.props.tooltipHtml(
             this.props.x(d),
             this.props.y0(d),
-            this.props.y(d)
+            this.props.y(d),
+            d // Reference to all data
         );
 
         const midPoint = xScale.rangeBand() / 2;

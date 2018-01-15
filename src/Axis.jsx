@@ -120,7 +120,11 @@ const Axis = createReactClass({
                 textAnchor = 'end';
             }
 
-            labelElement = <text className={`${className} label`} textAnchor={"end"} x={width} y={-6}>{label}</text>;
+            // x-axis
+            // TODO: Use props to define location (anchor, y)
+            labelElement = <text className={`${className} label`} textAnchor={"middle"} x={width/2} y={40}>{label}</text>;
+            // Old version
+            //labelElement = <text className={`${className} label`} textAnchor={"end"} x={width} y={-6}>{label}</text>;
         } else {
             transform = 'translate(0, {})';
             x = sign * tickSpacing;
@@ -142,7 +146,10 @@ const Axis = createReactClass({
                 textAnchor = 'middle';
             }
 
-            labelElement = <text className={`${className} label`} textAnchor="end" y={6} dy={orientation === 'left' ? '.75em' : '-1.25em'} transform="rotate(-90)">{label}</text>;
+            // y-axis
+            labelElement = <text className={`${className} label`} textAnchor="middle" y={-60} dy={orientation === 'left' ? '.75em' : '-1.25em'} x={-(height/2)} transform="rotate(-90)">{label}</text>;
+            // Old vesion
+            //labelElement = <text className={`${className} label`} textAnchor="end" y={6} dy={orientation === 'left' ? '.75em' : '-1.25em'} transform="rotate(-90)">{label}</text>;
         }
 
         const tickElements = ticks.map((tick, index) => {

@@ -33,7 +33,7 @@ const Tooltip = createReactClass({
             pointerEvents: 'none'
         };
 
-        return <div className="tooltip" style={style}>{html}</div>;
+        return <div className="tooltip" style={style} dangerouslySetInnerHTML={{__html:html}}></div>;
     }
 });
 
