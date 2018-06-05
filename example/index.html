@@ -115,7 +115,7 @@
         );
 
         var tooltip = function(x, y0, y, total) {
-        return y.toString();
+        return x + " " + y.toString();
         };
 
         var tooltipScatter = function(x, y) {
@@ -123,11 +123,11 @@
         };
 
         var tooltipPie = function(x, y) {
-        return y.toString();
+        return x + ": " + y.toString();
         };
 
-        var tooltipArea = function(y, cumulative, x) {
-        return "Total: " + cumulative + " X: " + x + " Y: " + y;
+        var tooltipArea = function(y, cumulative, x, label) {
+        return label + " Total: " + cumulative + " X: " + x + " Y: " + y;
         }
 
         var data = [{
